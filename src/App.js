@@ -9,7 +9,8 @@ class App extends Component {
       {name: 'Modi', age:'26'},
       {name: 'Sonia', age:'29'},
       {name: 'Rahul', age:'20'}
-    ]
+    ],
+    showPerson: false
   }
 
   switchNameHandler = (newName) => {
@@ -33,6 +34,11 @@ class App extends Component {
     })
   }
 
+  togglePersonHandler = () => {
+    const doesShow = this.state.showPerson;
+    this.setState({showPerson: !doesShow})
+  }
+
   render(){
     const style = {
       backgroungColor: 'white',
@@ -48,18 +54,22 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload...
           </p>
-          <button style = {style} onClick = {() => this.switchNameHandler("Narendra")}>Switch Name</button>
-          <Person 
-            name={this.state.persons[0].name} 
-            age={this.state.persons[0].age}></Person>
-          <Person 
-            name={this.state.persons[1].name} 
-            age={this.state.persons[1].age}
-            click = {this.switchNameHandler.bind(this,"Hero")}
-            changed = {this.nameChangedHandler}> My hobbies: reading</Person>
-          <Person 
-            name={this.state.persons[2].name} 
-             age={this.state.persons[2].age}></Person>
+          <button style = {style} onClick = {this.togglePersonHandler}>Toggle Person</button>
+          { this.state.showPerson ?
+            <div>
+              <Person 
+                name={this.state.persons[0].name} 
+                age={this.state.persons[0].age}></Person>
+              <Person 
+                name={this.state.persons[1].name} 
+                age={this.state.persons[1].age}
+                click = {this.switchNameHandler.bind(this,"Hero")}
+                changed = {this.nameChangedHandler}> My hobbies: reading</Person>
+              <Person 
+                name={this.state.persons[2].name} 
+                 age={this.state.persons[2].age}></Person>
+            </div> : null
+          }
   
           <a
             className="App-link"
