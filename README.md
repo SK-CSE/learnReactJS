@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Project structure summary:
+
+master branch contains all the merged work from different branches so that project run as fully functional react app.
+
+#### list of branches from basic to advance level : 
+
+- Basic-Features-and-Syntax
+- working-with-list-and-conditions
+
+
 
 ## Available Scripts
 
