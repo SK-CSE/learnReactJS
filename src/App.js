@@ -68,14 +68,26 @@ class App extends Component {
       )
       style.backgroundColor = 'red';
     }
+
+    const classes = [];
+
+    if(this.state.persons.length <=2){
+      classes.push('red');
+    }
+
+    if(this.state.persons.length <=1){
+      classes.push('bold');
+    }
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
+          <p className={classes.join(' ')}>
             Edit <code>src/App.js</code> and save to reload...
           </p>
           <button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>
+        
           {persons}
           <a
             className="App-link"
