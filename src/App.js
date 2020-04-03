@@ -6,32 +6,11 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'Modi', age: '26' },
-      { name: 'Sonia', age: '29' },
-      { name: 'Rahul', age: '20' }
+      { name: 'Modi', age: '26', id:'hfih84' },
+      { name: 'Sonia', age: '29', id:'josj723' },
+      { name: 'Rahul', age: '20', id:'fawxn5489' }
     ],
     showPerson: false
-  }
-
-  switchNameHandler = (newName) => {
-    console.log('was clicked..!!')
-    this.setState({
-      persons: [
-        { name: newName, age: '26' },
-        { name: 'Sonia', age: '29' },
-        { name: 'Rahul', age: '20' }
-      ]
-    })
-  }
-
-  nameChangedHandler = (event) => {
-    this.setState({
-      persons: [
-        { name: "Modi", age: '26' },
-        { name: event.target.value, age: '29' },
-        { name: 'Rahul', age: '20' }
-      ]
-    })
   }
 
   togglePersonHandler = () => {
@@ -63,7 +42,8 @@ class App extends Component {
             return <Person
               click = {()=>this.deletePersonHandler(index)}
               name={person.name}
-              age={person.age}></Person>
+              age={person.age}
+              key={person.id}></Person>
           })}
         </div>
       )
