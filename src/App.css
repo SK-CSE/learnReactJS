@@ -43,3 +43,26 @@
 .bold {
   font-weight: bold;
 }
+
+.App button {
+  background-color: 'green';
+  color: 'white';
+  font: 'inherit';
+  border: '1px solid blue';
+  padding: '16px';
+  cursor: 'pointer';
+}
+
+.App button:hover {
+  background-color: lightgreen;
+  color: black;
+}
+.App button.red {
+  background-color: red;
+  color:white;
+}
+
+.App button.red:hover {
+  background-color: salmon;
+  color: black;
+}
