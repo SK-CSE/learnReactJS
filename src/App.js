@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
 import logo from './logo.svg';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -51,10 +50,6 @@ class App extends Component {
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
     }
 
     let persons = null;
@@ -72,47 +67,40 @@ class App extends Component {
         </div>
       )
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
-
     }
 
-    const classes = [];
+    const assignedClasses = [];
 
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
 
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p className={classes.join(' ')}>
-              Edit <code>src/App.js</code> and save to reload...
+      <div className={classes.App}>
+        <header className={classes.AppHeader}>
+          <img src={logo} className={classes.AppLogo} alt="logo" />
+          <p className={assignedClasses.join(' ')}>
+            Edit <code>src/App.js</code> and save to reload...
           </p>
-            <button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>
+          <button style={style} onClick={this.togglePersonHandler}>Toggle Person</button>
 
-            {persons}
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
+          {persons}
+          <a
+            className={classes.AppLink}
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
           </a>
-          </header>
-        </div>
-      </StyleRoot>
+        </header>
+      </div>
     );
   }
 }
 
-export default Radium(App);
+export default App;
