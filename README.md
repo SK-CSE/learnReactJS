@@ -7,6 +7,7 @@ master branch contains all the merged work from different branches so that proje
 - Basic-Features-and-Syntax
 - working-with-list-and-conditions
 - Styling-React-Components-and-Elements
+- diving-deeper-into-react-components-and-internals
 
 
 
