@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
-import WithClass from '../hoc/WithClass'
+import withClasss from '../hoc/withClasss'
+import Aux from '../hoc/Aux';
+
 
 import classes from './App.css'
 
@@ -89,7 +91,7 @@ console.log("render")
 
 
     return (
-      <WithClass classes={classes.App}>
+      <Aux>
                 <button
           onClick={() => {
             this.setState({ showCockpit: false });
@@ -107,9 +109,9 @@ console.log("render")
         ) : null}
 
         {persons}
-      </WithClass>
+      </Aux>
     );
   }
 }
 
-export default App;
+export default withClasss(App, classes.App);
