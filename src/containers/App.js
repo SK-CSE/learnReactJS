@@ -99,7 +99,7 @@ console.log("render")
         <Cockpit
           title={this.props.appTitle}
           showPerson = {this.state.showPerson}
-          persons = {this.state.persons}
+          personsLength = {this.state.persons.length}
           clicked={this.togglePersonHandler}>
         </Cockpit>
         ) : null}
