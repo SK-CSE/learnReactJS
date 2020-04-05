@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass'
+
 import classes from './App.css'
 
 class App extends Component {
@@ -87,7 +89,7 @@ console.log("render")
 
 
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
                 <button
           onClick={() => {
             this.setState({ showCockpit: false });
@@ -105,7 +107,7 @@ console.log("render")
         ) : null}
 
         {persons}
-      </div>
+      </WithClass>
     );
   }
 }
