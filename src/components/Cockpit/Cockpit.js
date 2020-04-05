@@ -5,10 +5,11 @@ import classes from './Cockpit.css';
 const cockpit = (props) => {
   useEffect(()=>{
     console.log("cockpit useEffect");
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       alert("yo")
     }, 1000);
     return () => {
+      clearTimeout(timer);
       console.log('[Cockpit.js] cleanup work in useEffect');
     };
   }, []);

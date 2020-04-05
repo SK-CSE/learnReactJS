@@ -95,12 +95,15 @@ console.log("render")
         >
           Remove Cockpit
         </button>
+        {this.state.showCockpit ? (
         <Cockpit
           title={this.props.appTitle}
           showPerson = {this.state.showPerson}
           persons = {this.state.persons}
           clicked={this.togglePersonHandler}>
         </Cockpit>
+        ) : null}
+
         {persons}
       </div>
     );
