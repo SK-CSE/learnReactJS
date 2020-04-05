@@ -1,28 +1,5 @@
-.Cockpit {
-    text-align: center;
-  }
-  
-  .AppLogo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .AppLogo {
-      animation: App-logo-spin infinite 0.5s linear;
-    }
-  }
 
-
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .red {
+.red {
     color: red;
   }
   
@@ -31,24 +8,24 @@
   }
   
   .Cockpit button {
-    background-color: 'green';
-    color: 'white';
-    font: 'inherit';
-    border: '1px solid blue';
-    padding: '16px';
-    cursor: 'pointer';
+    border: 1px solid blue;
+    padding: 16px;
+    background-color: green;
+    font: inherit;
+    color: white;
+    cursor: pointer;
   }
   
   .Cockpit button:hover {
     background-color: lightgreen;
     color: black;
   }
-  .Cockpit button.red {
+  
+  .Cockpit button.Red {
     background-color: red;
-    color:white;
   }
   
-  .Cockpit button.red:hover {
+  .Cockpit button.Red:hover {
     background-color: salmon;
     color: black;
   }
